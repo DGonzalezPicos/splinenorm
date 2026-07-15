@@ -11,7 +11,7 @@ splinenorm
    </p>
 
    <div class="sn-quick-links">
-     <a href="notebooks/index.html">Browse notebooks</a>
+     <a href="examples/index.html">Examples</a>
      <a href="api.html">API reference</a>
      <a href="https://github.com/DGonzalezPicos/splinenorm">GitHub</a>
    </div>
@@ -44,14 +44,17 @@ Quick start
    components = model(flux)
    amplitudes = solve_linear(flux, np.ones_like(flux), components)
 
-Notebooks
----------
+Examples
+--------
+
+Browse the :doc:`examples gallery <examples/index>` for step-by-step notebooks
+with bundled spectroscopic data:
 
 .. grid:: 1 2 2 3
    :gutter: 3
 
    .. grid-item-card:: Getting started
-      :link: Getting_Started
+      :link: examples/getting_started
       :link-type: doc
       :img-top: plots/remove_continuum_diagnostics.png
       :class-card: sd-card-hover
@@ -59,7 +62,7 @@ Notebooks
       Synthetic blaze injection and continuum removal.
 
    .. grid-item-card:: Fit continuum
-      :link: Fit_Continuum
+      :link: examples/fit_continuum
       :link-type: doc
       :img-top: plots/fit_continuum_comparison.png
       :class-card: sd-card-hover
@@ -67,31 +70,24 @@ Notebooks
       Real M-dwarf data: flat vs. template continuum.
 
    .. grid-item-card:: Fit fringing
-      :link: Fit_Fringing
+      :link: examples/fit_fringing
       :link-type: doc
       :img-top: plots/fit_continuum_diagnostics.png
       :class-card: sd-card-hover
 
       IFU fringing and companion recovery in high-contrast spectroscopy.
 
-See the full :doc:`notebook gallery <notebooks/index>`.
-
 .. toctree::
    :maxdepth: 2
-   :caption: Notebooks
-   :hidden:
+   :caption: Examples
 
-   Gallery <notebooks/index>
-   Getting Started <Getting_Started>
-   Fit Continuum <Fit_Continuum>
-   Fit Fringing <Fit_Fringing>
+   examples/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Reference
-   :hidden:
 
-   api
+   API <api>
 
 Indices
 -------

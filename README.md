@@ -46,9 +46,9 @@ fitting, and high-contrast IFU fringing recovery. Example spectra ship in
 
 | Notebook | Topic |
 |---|---|
-| `docs/Getting_Started.ipynb` | Basic continuum removal |
-| `docs/Fit_Continuum.ipynb` | Flat vs. template continuum strategies |
-| `docs/Fit_Fringing.ipynb` | Fringing simulation and companion recovery |
+| `docs/examples/getting_started.ipynb` | Basic continuum removal |
+| `docs/examples/fit_continuum.ipynb` | Flat vs. template continuum strategies |
+| `docs/examples/fit_fringing.ipynb` | Fringing simulation and companion recovery |
 
 ## Tests
 
