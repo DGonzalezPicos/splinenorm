@@ -17,14 +17,15 @@ pip install splinenorm
 Development install:
 
 ```bash
-git clone https://github.com/<your-org>/splinenorm.git
+git clone https://github.com/DGonzalezPicos/splinenorm.git
 cd splinenorm
 pip install -e ".[dev]"
 ```
 
 ## Documentation
 
-Online docs are published via GitHub Pages after pushing to `main`.
+Online docs: **https://dgonzalezpicos.github.io/splinenorm/**
+
 Build locally:
 
 ```bash
