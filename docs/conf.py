@@ -77,5 +77,8 @@ def setup(app):
     def _add_notebook_toolbar(app, pagename, templatename, context, doctitle):
         if pagename in NOTEBOOK_PAGES:
             context["notebook_ipynb"] = f"{pagename}.ipynb"
+            meta = dict(context.get("meta") or {})
+            meta["html_theme.sidebar_secondary.remove"] = "true"
+            context["meta"] = meta
 
     app.connect("html-page-context", _add_notebook_toolbar)

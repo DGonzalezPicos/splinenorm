@@ -4,6 +4,13 @@
   --sn-border: #d9e2ec;
   --sn-muted: #52606d;
   --sn-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+
+  /* Layout: compact navigation, wider reading area */
+  --pst-sidebar-secondary: 12rem;
+  --sn-sidebar-primary: 12.5rem;
+  --sn-page-max-width: 100rem;
+  --sn-article-max-width: 50rem;
+  --sn-notebook-max-width: min(84rem, calc(100vw - var(--sn-sidebar-primary) - 2.5rem));
 }
 
 html[data-theme="dark"] {
@@ -131,16 +138,69 @@ html[data-theme="dark"] .cell_output .output img {
   background: #111827;
 }
 
-/* API pages */
-dl.field-list > dt {
-  font-weight: 600;
+/* --------------------------------------------------------------------------
+   Page layout — narrow sidebars, wide notebook column
+   -------------------------------------------------------------------------- */
+
+.bd-page-width {
+  max-width: var(--sn-page-max-width);
+}
+
+@media (min-width: 992px) {
+  /* Primary sidebar: fixed width instead of bootstrap col-3 (~25%) */
+  .bd-sidebar-primary {
+    flex: 0 0 var(--sn-sidebar-primary) !important;
+    max-width: var(--sn-sidebar-primary) !important;
+    width: var(--sn-sidebar-primary) !important;
+    padding: 0.65rem 0.55rem;
+    font-size: 0.875rem;
+  }
+
+  .bd-sidebar-primary .nav-link,
+  .bd-sidebar-primary .toctree-l1 > a {
+    padding-top: 0.18rem;
+    padding-bottom: 0.18rem;
+  }
+
+  .bd-sidebar-primary .caption-text {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Notebook pages: drop right-hand TOC to reclaim horizontal space */
+  .bd-container__inner:has(.bd-article .cell) .bd-sidebar-secondary {
+    display: none;
+  }
+
+  .bd-container__inner:has(.bd-article .cell) .bd-main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
 
 .bd-main .bd-content {
-  max-width: 52rem;
+  max-width: none;
+  justify-content: flex-start;
 }
 
-/* Wider layout for rendered notebooks */
-.bd-main .bd-content:has(.nbinput) {
-  max-width: 60rem;
+.bd-main .bd-article-container {
+  max-width: var(--sn-article-max-width);
+  width: 100%;
+  padding: 1rem 1.25rem;
+}
+
+/* Notebook pages use nearly the full content column */
+.bd-main .bd-article-container:has(.cell) {
+  max-width: var(--sn-notebook-max-width);
+}
+
+.bd-main .bd-article:has(.cell) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* API pages */
+dl.field-list > dt {
+  font-weight: 600;
 }
