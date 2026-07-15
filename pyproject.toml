@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "splinenorm"
+version = "0.1.0"
+description = "Scientific astronomy tools for spline normalization"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Dario Gonzalez Picos" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "astropy>=5.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "sphinx>=7.0",
+]
+docs = [
+    "sphinx>=7.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/splinenorm"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/splinenorm", "tests", "docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
