@@ -28,7 +28,7 @@ Each notebook is rendered below; use the toolbar to open it on GitHub or in Cola
    .. grid-item-card:: Fit fringing
       :link: fit_fringing
       :link-type: doc
-      :img-top: ../plots/fit_continuum_diagnostics.png
+      :img-top: ../plots/fit_fringing_diagnostics.png
       :class-card: sd-card-hover
 
       Forward-model IFU fringes on a high-contrast spectrum and recover an

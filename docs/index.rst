@@ -72,7 +72,7 @@ with bundled spectroscopic data:
    .. grid-item-card:: Fit fringing
       :link: examples/fit_fringing
       :link-type: doc
-      :img-top: plots/fit_continuum_diagnostics.png
+      :img-top: plots/fit_fringing_diagnostics.png
       :class-card: sd-card-hover
 
       IFU fringing and companion recovery in high-contrast spectroscopy.
