@@ -1,7 +1,7 @@
 # splinenorm
 
-Lightweight Python tools for **B-spline continuum normalization** and
-weighted linear fitting of one-dimensional astronomical spectra.
+**B-spline continuum normalization** and
+weighted linear fitting of astronomical spectra.
 
 ## Features
 
@@ -10,7 +10,7 @@ weighted linear fitting of one-dimensional astronomical spectra.
 
 ## Installation
 
-The package is not yet on PyPI. Install from source:
+Install from source:
 
 ```bash
 git clone https://github.com/DGonzalezPicos/splinenorm.git
@@ -22,17 +22,7 @@ pip install -e ".[dev]"
 
 Online docs: **https://dgonzalezpicos.github.io/splinenorm/**
 
-The docs include rendered Jupyter notebooks with a figure gallery, API reference,
-and GitHub/Colab launch links on each notebook page.
-
-Build locally:
-
-```bash
-pip install -e ".[docs]"
-make -C docs html
-```
-
-Open `docs/_build/html/index.html` in a browser.
+The docs include Jupyter notebooks, API reference, and GitHub/Colab launch links.
 
 ## Examples
 
