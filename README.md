@@ -27,7 +27,7 @@ The docs include Jupyter notebooks, API reference, and GitHub/Colab launch links
 ## Examples
 
 Jupyter notebooks in `docs/examples/` walk through continuum removal, PHOENIX-template
-fitting, and high-contrast IFU fringing recovery. Example spectra ship in
+fitting, and spectrum fringing recovery. Example spectra ship in
 `docs/data/`; diagnostic figures are in `docs/plots/`.
 
 | Notebook | Topic |

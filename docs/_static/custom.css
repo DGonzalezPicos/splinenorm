@@ -1,8 +1,18 @@
+/* ==========================================================================
+   splinenorm — minimal docs theme for high-resolution spectroscopy
+   Subtle continuum curves & fringe motifs; PyData Sphinx layout preserved.
+   ========================================================================== */
+
 :root {
+  /* Instrument / night-sky palette */
+  --sn-deep: #0f1c2e;
   --sn-accent: #1a5276;
+  --sn-accent-bright: #2d7da8;
   --sn-accent-soft: #eaf2f8;
+  --sn-continuum: #b8956a;
   --sn-border: #d9e2ec;
   --sn-muted: #52606d;
+  --sn-surface: #f8fafc;
   --sn-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
 
   /* Layout: compact navigation, wider reading area */
@@ -11,22 +21,123 @@
   --sn-page-max-width: 100rem;
   --sn-article-max-width: 50rem;
   --sn-notebook-max-width: min(84rem, calc(100vw - var(--sn-sidebar-primary) - 2.5rem));
+
+  /* SVG data-URI backgrounds (encoded for CSS) */
+  --sn-bg-fringe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='32' viewBox='0 0 160 32'%3E%3Cpath d='M0 16 Q20 8 40 16 T80 16 T120 16 T160 16' fill='none' stroke='%231a5276' stroke-width='1' stroke-opacity='0.07'/%3E%3Cpath d='M0 20 Q20 12 40 20 T80 20 T120 20 T160 20' fill='none' stroke='%231a5276' stroke-width='0.75' stroke-opacity='0.04'/%3E%3C/svg%3E");
+  --sn-bg-continuum: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='96' viewBox='0 0 480 96'%3E%3Cpath d='M0 72 C96 28 192 84 288 40 C336 18 384 32 480 20' fill='none' stroke='%231a5276' stroke-width='2' stroke-opacity='0.12' stroke-linecap='round'/%3E%3Cpath d='M0 76 C96 44 192 80 288 52 C336 36 384 48 480 36' fill='none' stroke='%23b8956a' stroke-width='1.25' stroke-opacity='0.1' stroke-linecap='round'/%3E%3Cline x1='120' y1='8' x2='120' y2='88' stroke='%231a5276' stroke-opacity='0.05' stroke-width='1'/%3E%3Cline x1='240' y1='8' x2='240' y2='88' stroke='%231a5276' stroke-opacity='0.05' stroke-width='1'/%3E%3Cline x1='360' y1='8' x2='360' y2='88' stroke='%231a5276' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+  --sn-wave-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='8' viewBox='0 0 1200 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 C150 1 300 7 450 4 S750 1 900 4 S1050 7 1200 4' fill='none' stroke='%231a5276' stroke-width='1.5' stroke-opacity='0.18'/%3E%3C/svg%3E");
 }
 
 html[data-theme="dark"] {
+  --sn-deep: #0b1220;
   --sn-accent: #7ec8e3;
-  --sn-accent-soft: #1f2937;
-  --sn-border: #374151;
+  --sn-accent-bright: #a8dff0;
+  --sn-accent-soft: #162032;
+  --sn-continuum: #c9a87c;
+  --sn-border: #2d3a4d;
   --sn-muted: #9ca3af;
-  --sn-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --sn-surface: #0f172a;
+  --sn-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  --sn-bg-fringe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='32' viewBox='0 0 160 32'%3E%3Cpath d='M0 16 Q20 8 40 16 T80 16 T120 16 T160 16' fill='none' stroke='%237ec8e3' stroke-width='1' stroke-opacity='0.1'/%3E%3Cpath d='M0 20 Q20 12 40 20 T80 20 T120 20 T160 20' fill='none' stroke='%237ec8e3' stroke-width='0.75' stroke-opacity='0.05'/%3E%3C/svg%3E");
+  --sn-bg-continuum: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='96' viewBox='0 0 480 96'%3E%3Cpath d='M0 72 C96 28 192 84 288 40 C336 18 384 32 480 20' fill='none' stroke='%237ec8e3' stroke-width='2' stroke-opacity='0.14' stroke-linecap='round'/%3E%3Cpath d='M0 76 C96 44 192 80 288 52 C336 36 384 48 480 36' fill='none' stroke='%23c9a87c' stroke-width='1.25' stroke-opacity='0.12' stroke-linecap='round'/%3E%3Cline x1='120' y1='8' x2='120' y2='88' stroke='%237ec8e3' stroke-opacity='0.06' stroke-width='1'/%3E%3Cline x1='240' y1='8' x2='240' y2='88' stroke='%237ec8e3' stroke-opacity='0.06' stroke-width='1'/%3E%3Cline x1='360' y1='8' x2='360' y2='88' stroke='%237ec8e3' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+  --sn-wave-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='8' viewBox='0 0 1200 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 C150 1 300 7 450 4 S750 1 900 4 S1050 7 1200 4' fill='none' stroke='%237ec8e3' stroke-width='1.5' stroke-opacity='0.22'/%3E%3C/svg%3E");
 }
 
-/* Landing page */
+/* --------------------------------------------------------------------------
+   Global surface — faint etalon fringe texture
+   -------------------------------------------------------------------------- */
+
+body {
+  background-color: var(--sn-surface);
+  background-image: var(--sn-bg-fringe);
+  background-size: 160px 32px;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--sn-deep);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--sn-accent) 22%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   Header — continuum band under navbar
+   -------------------------------------------------------------------------- */
+
+.bd-header {
+  border-bottom: 1px solid var(--sn-border);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sn-accent-soft) 55%, transparent) 0%, transparent 100%),
+    var(--sn-bg-continuum) center bottom / 100% 3.5rem no-repeat;
+}
+
+.bd-header .navbar-brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.bd-header .nav-link:hover,
+.bd-header .nav-link:focus {
+  color: var(--sn-accent-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Typography & section rhythm
+   -------------------------------------------------------------------------- */
+
+.bd-main .bd-article > h1 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.25rem;
+  border-bottom: none;
+  background: var(--sn-wave-divider) left bottom / 100% 6px no-repeat;
+}
+
+.bd-main .bd-article > h2 {
+  margin-top: 2.25rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid color-mix(in srgb, var(--sn-accent) 45%, transparent);
+}
+
+.bd-main .bd-article a:not(.headerlink):not(.sn-quick-links a):not(.sn-notebook-btn) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.bd-main .bd-article a:not(.headerlink):not(.sn-quick-links a):not(.sn-notebook-btn):hover {
+  color: var(--sn-accent-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Landing page hero
+   -------------------------------------------------------------------------- */
+
 .sn-lead {
+  position: relative;
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--sn-muted);
   max-width: 46rem;
+  margin-top: 0.25rem;
+  padding: 1.35rem 1.5rem 1.5rem;
+  border: 1px solid var(--sn-border);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--sn-accent-soft) 70%, transparent), transparent 55%),
+    var(--sn-bg-continuum) right -1rem top -0.5rem / min(28rem, 90%) auto no-repeat;
+  box-shadow: var(--sn-card-shadow);
+}
+
+.sn-lead strong {
+  color: var(--sn-accent);
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .sn-lead strong {
+  color: var(--sn-accent-bright);
 }
 
 .sn-quick-links {
@@ -43,25 +154,46 @@ html[data-theme="dark"] {
   border-radius: 999px;
   text-decoration: none !important;
   font-size: 0.92rem;
+  background: color-mix(in srgb, var(--sn-surface) 88%, transparent);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
 .sn-quick-links a:hover {
   border-color: var(--sn-accent);
   background: var(--sn-accent-soft);
+  transform: translateY(-1px);
 }
 
-/* Notebook gallery cards */
+/* --------------------------------------------------------------------------
+   Notebook gallery cards
+   -------------------------------------------------------------------------- */
+
 .sd-card.sd-card-hover {
   border: 1px solid var(--sn-border);
   border-radius: 0.65rem;
   box-shadow: var(--sn-card-shadow);
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  background: color-mix(in srgb, var(--sn-surface) 92%, transparent);
+}
+
+.sd-card.sd-card-hover::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--sn-accent) 55%, transparent) 20%,
+    color-mix(in srgb, var(--sn-continuum) 45%, transparent) 50%,
+    color-mix(in srgb, var(--sn-accent) 55%, transparent) 80%,
+    transparent
+  );
 }
 
 .sd-card.sd-card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--sn-accent) 8%, transparent);
   border-color: var(--sn-accent);
 }
 
@@ -69,11 +201,15 @@ html[data-theme="dark"] {
   object-fit: cover;
   max-height: 220px;
   width: 100%;
-  background: #f8fafc;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sn-accent-soft) 40%, transparent), transparent),
+    #f8fafc;
 }
 
 html[data-theme="dark"] .sd-card-img-top {
-  background: #111827;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sn-accent-soft) 50%, transparent), transparent),
+    #111827;
 }
 
 .sd-card .sd-card-title {
@@ -87,12 +223,17 @@ html[data-theme="dark"] .sd-card-img-top {
   line-height: 1.55;
 }
 
-/* Notebook toolbar (GitHub / Colab) */
+/* --------------------------------------------------------------------------
+   Notebook toolbar (GitHub / Colab)
+   -------------------------------------------------------------------------- */
+
 .sn-notebook-toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0 0 1.25rem;
+  padding-bottom: 0.85rem;
+  background: var(--sn-wave-divider) left bottom / 100% 5px no-repeat;
 }
 
 .sn-notebook-btn {
@@ -102,6 +243,8 @@ html[data-theme="dark"] .sd-card-img-top {
   border-radius: 0.35rem;
   font-size: 0.85rem;
   text-decoration: none !important;
+  background: color-mix(in srgb, var(--sn-surface) 90%, transparent);
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .sn-notebook-btn:hover {
@@ -113,12 +256,28 @@ html[data-theme="dark"] .sd-card-img-top {
   background: var(--sn-accent-soft);
 }
 
-/* MyST-NB notebook cells */
+/* --------------------------------------------------------------------------
+   MyST-NB notebook cells — wavelength-axis accent
+   -------------------------------------------------------------------------- */
+
 .cell_input,
 .cell_output {
   border-left: 2px solid var(--sn-border);
   padding-left: 0.75rem;
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.cell_input::before,
+.cell_output::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 1.25rem;
+  background: var(--sn-accent);
+  opacity: 0.55;
 }
 
 .cell_output .output img {
@@ -139,6 +298,39 @@ html[data-theme="dark"] .cell_output .output img {
 }
 
 /* --------------------------------------------------------------------------
+   Code blocks & API
+   -------------------------------------------------------------------------- */
+
+div.highlight {
+  border: 1px solid var(--sn-border);
+  border-radius: 0.4rem;
+  box-shadow: var(--sn-card-shadow);
+}
+
+dl.field-list > dt {
+  font-weight: 600;
+  color: var(--sn-accent);
+}
+
+html[data-theme="dark"] dl.field-list > dt {
+  color: var(--sn-accent-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar — compact, accent on active trail
+   -------------------------------------------------------------------------- */
+
+.bd-sidebar-primary .nav-link.active,
+.bd-sidebar-primary .nav-link[aria-current="page"] {
+  color: var(--sn-accent);
+  font-weight: 600;
+}
+
+.bd-sidebar-primary .toctree-l1 > a:hover {
+  color: var(--sn-accent-bright);
+}
+
+/* --------------------------------------------------------------------------
    Page layout — narrow sidebars, wide notebook column
    -------------------------------------------------------------------------- */
 
@@ -147,13 +339,13 @@ html[data-theme="dark"] .cell_output .output img {
 }
 
 @media (min-width: 992px) {
-  /* Primary sidebar: fixed width instead of bootstrap col-3 (~25%) */
   .bd-sidebar-primary {
     flex: 0 0 var(--sn-sidebar-primary) !important;
     max-width: var(--sn-sidebar-primary) !important;
     width: var(--sn-sidebar-primary) !important;
     padding: 0.65rem 0.55rem;
     font-size: 0.875rem;
+    border-right: 1px solid var(--sn-border);
   }
 
   .bd-sidebar-primary .nav-link,
@@ -166,9 +358,9 @@ html[data-theme="dark"] .cell_output .output img {
     font-size: 0.78rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: var(--sn-muted);
   }
 
-  /* Notebook pages: drop right-hand TOC to reclaim horizontal space */
   .bd-container__inner:has(.bd-article .cell) .bd-sidebar-secondary {
     display: none;
   }
@@ -190,7 +382,6 @@ html[data-theme="dark"] .cell_output .output img {
   padding: 1rem 1.25rem;
 }
 
-/* Notebook pages use nearly the full content column */
 .bd-main .bd-article-container:has(.cell) {
   max-width: var(--sn-notebook-max-width);
 }
@@ -200,7 +391,13 @@ html[data-theme="dark"] .cell_output .output img {
   padding-right: 0.5rem;
 }
 
-/* API pages */
-dl.field-list > dt {
-  font-weight: 600;
+/* --------------------------------------------------------------------------
+   Footer — quiet fringe line
+   -------------------------------------------------------------------------- */
+
+.bd-footer {
+  border-top: 1px solid var(--sn-border);
+  background: var(--sn-wave-divider) center top / 100% 5px no-repeat;
+  font-size: 0.88rem;
+  color: var(--sn-muted);
 }

@@ -1,5 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#1a5276"/>
-  <path d="M6 22 C10 10, 22 10, 26 22" stroke="#eaf2f8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-  <circle cx="16" cy="12" r="2.2" fill="#7ec8e3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="splinenorm">
+  <defs>
+    <linearGradient id="sn-bg" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f1c2e"/>
+      <stop offset="1" stop-color="#1a5276"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="7" fill="url(#sn-bg)"/>
+
+  <!-- Wavelength axis -->
+  <line x1="5" y1="26.5" x2="27" y2="26.5" stroke="#eaf2f8" stroke-opacity="0.18" stroke-width="0.5"/>
+
+  <!-- 1. Original spectrum -->
+  <path
+    d="M5 17.8 C8.2 15.2 11.2 18.4 14.2 15.6 C15.8 14.4 16.8 17.6 18.2 12.8 C19.4 10.8 21.6 15.2 24 13.6 C25.6 12.6 26.8 14.8 27 12.4"
+    stroke="#eaf2f8"
+    stroke-width="1"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.52"
+  />
+
+  <!-- 2. Spline fitted continuum -->
+  <path
+    d="M5 17.2 C9.2 14.2 13.4 17.8 17.2 14.2 C20.2 11.8 23.6 13.4 27 12.2"
+    stroke="#c9a87c"
+    stroke-width="1.7"
+    stroke-linecap="round"
+  />
+
+  <!-- 3. Spline-corrected (normalized) spectrum -->
+  <path
+    d="M5 22.4 C8.4 22.1 11.6 22.6 14.4 21.7 C15.8 21.2 16.6 22.5 17.8 21 C18.8 20.4 20.8 22.2 23.6 21.8 C25.4 21.5 26.6 22.1 27 21.7"
+    stroke="#7ec8e3"
+    stroke-width="1.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>
