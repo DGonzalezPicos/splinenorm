@@ -1,0 +1,17 @@
+{% extends "!layout.html" %}
+
+{% block docs_body %}
+{% if notebook_ipynb is defined %}
+<div class="sn-notebook-toolbar">
+  <a class="sn-notebook-btn"
+     href="https://github.com/DGonzalezPicos/splinenorm/blob/main/docs/{{ notebook_ipynb }}">
+    View on GitHub
+  </a>
+  <a class="sn-notebook-btn sn-notebook-btn--accent"
+     href="https://colab.research.google.com/github/DGonzalezPicos/splinenorm/blob/main/docs/{{ notebook_ipynb }}">
+    Open in Colab
+  </a>
+</div>
+{% endif %}
+{{ super() }}
+{% endblock %}

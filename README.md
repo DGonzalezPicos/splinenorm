@@ -26,6 +26,9 @@ pip install -e ".[dev]"
 
 Online docs: **https://dgonzalezpicos.github.io/splinenorm/**
 
+The docs include rendered Jupyter notebooks with a figure gallery, API reference,
+and GitHub/Colab launch links on each notebook page.
+
 Build locally:
 
 ```bash

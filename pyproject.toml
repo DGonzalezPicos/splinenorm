@@ -28,6 +28,10 @@ dev = [
 ]
 docs = [
     "sphinx>=7.0",
+    "pydata-sphinx-theme>=0.15",
+    "myst-nb>=1.0",
+    "sphinx-design>=0.5",
+    "ipython>=8.0",
 ]
 
 [tool.hatch.build.targets.wheel]
