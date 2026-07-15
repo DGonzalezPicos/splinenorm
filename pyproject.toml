@@ -10,17 +10,16 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Dario Gonzalez Picos" }]
-
-[project.urls]
-Homepage = "https://dgonzalezpicos.github.io/splinenorm/"
-Repository = "https://github.com/DGonzalezPicos/splinenorm"
-Documentation = "https://dgonzalezpicos.github.io/splinenorm/"
-
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
     "astropy>=5.3",
 ]
+
+[project.urls]
+Homepage = "https://dgonzalezpicos.github.io/splinenorm/"
+Repository = "https://github.com/DGonzalezPicos/splinenorm"
+Documentation = "https://dgonzalezpicos.github.io/splinenorm/"
 
 [project.optional-dependencies]
 dev = [
