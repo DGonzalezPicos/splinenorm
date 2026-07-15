@@ -19,17 +19,23 @@ splinenorm
 Installation
 ------------
 
-.. code-block:: bash
-
-   pip install splinenorm
-
-Development install:
+Install from source (PyPI release not yet available):
 
 .. code-block:: bash
 
    git clone https://github.com/DGonzalezPicos/splinenorm.git
    cd splinenorm
    pip install -e ".[dev]"
+
+Citation
+--------
+
+If you use ``splinenorm``, please cite González Picos et al. (2025), *A&A*,
+`doi:10.1051/0004-6361/202451936 <https://doi.org/10.1051/0004-6361/202451936>`_.
+
+The spline continuum model follows Ruffio et al. (2023), *AJ*, 165, 113,
+`doi:10.3847/1538-3881/acb34a <https://doi.org/10.3847/1538-3881/acb34a>`_.
+See :doc:`citation` for BibTeX entries.
 
 Quick start
 -----------
@@ -88,6 +94,7 @@ with bundled spectroscopic data:
    :caption: Reference
 
    API <api>
+   Citation <citation>
 
 Indices
 -------

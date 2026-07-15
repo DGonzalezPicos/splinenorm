@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+title: splinenorm
+message: >-
+  If you use this software, please cite the A&A paper below and acknowledge
+  the original spline forward-modeling framework (Ruffio et al. 2023, AJ, 165, 113).
+type: software
+authors:
+  - family-names: González Picos
+    given-names: Dario
+repository-code: https://github.com/DGonzalezPicos/splinenorm
+url: https://dgonzalezpicos.github.io/splinenorm/
+license: MIT
+version: 0.1.0
+preferred-citation:
+  type: article
+  title: >-
+    The ESO SupJup Survey - IV. Unveiling the carbon isotope ratio of GQ Lup B
+    and its host star
+  authors:
+    - family-names: González Picos
+      given-names: Dario
+    - family-names: Snellen
+      given-names: I. A. G.
+    - family-names: de Regt
+      given-names: S.
+    - family-names: Landman
+      given-names: R.
+    - family-names: Zhang
+      given-names: Y.
+    - family-names: Gandhi
+      given-names: S.
+    - family-names: Sánchez-López
+      given-names: A.
+  doi: 10.1051/0004-6361/202451936
+  journal: Astronomy & Astrophysics
+  year: 2025
+
+references:
+  - type: article
+    title: >-
+      Detecting Exomoons from Radial Velocity Measurements of Self-luminous
+      Planets: Application to Observations of HR 7672 B and Future Prospects
+    authors:
+      - family-names: Ruffio
+        given-names: Jean-Baptiste
+      - family-names: Horstman
+        given-names: Katelyn
+      - family-names: Mawet
+        given-names: Dimitri
+    doi: 10.3847/1538-3881/acb34a
+    journal: The Astronomical Journal
+    volume: 165
+    issue: 113
+    year: 2023
+    notes: Spline-based continuum forward modeling in the breads framework

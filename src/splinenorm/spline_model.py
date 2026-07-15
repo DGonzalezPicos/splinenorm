@@ -9,7 +9,9 @@ from scipy.interpolate import InterpolatedUnivariateSpline
 class SplineModel:
     """Decompose a 1D spectrum into spline basis components.
 
-    Adapted from `github.com/jruffio/breads`.
+    Adapted from the `breads <https://github.com/jruffio/breads>`_ package.
+    The spline-based continuum forward model follows Ruffio et al. (2023),
+    AJ, 165, 113, https://doi.org/10.3847/1538-3881/acb34a.
 
     Parameters
     ----------
